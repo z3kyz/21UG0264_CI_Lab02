@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "my_lambda" {
-  function_name = "MyLambdaFunction"
+  function_name = "MyLambdaFunction2"
   handler       = "index.handler"
   runtime       = "python3.8"
   role          = aws_iam_role.lambda_exec.arn
@@ -9,7 +9,7 @@ resource "aws_lambda_function" "my_lambda" {
 }
 
 resource "aws_iam_role" "lambda_exec" {
-  name = "lambda_exec_role"
+  name = "lambda_exec_role2"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -27,7 +27,7 @@ resource "aws_iam_role" "lambda_exec" {
 
 # Additional policies for the Lambda role...
 resource "aws_iam_policy" "lambda_logging_policy" {
-  name        = "lambda_logging_policy"
+  name        = "lambda_logging_policy2"
   description = "IAM policy for logging from a lambda"
 
   policy = jsonencode({
